@@ -2,8 +2,8 @@
 
 import { useRef } from "react";
 
-const DIGITAL_CHECKOUT = "https://b-amechi-books.myshopify.com/cart/51335219314843:1";
-const HARDCOVER_CHECKOUT = "https://b-amechi-books.myshopify.com/cart/51335219937435:1";
+const DIGITAL_CHECKOUT = "https://b-amechi-books.myshopify.com/products/keyism-digital-edition";
+const HARDCOVER_CHECKOUT = "https://b-amechi-books.myshopify.com/products/keyism-hardcover-edition";
 
 const actions = [
   { index: "01", label: "DIGITAL", detail: "$44", href: DIGITAL_CHECKOUT },
@@ -69,6 +69,9 @@ export default function Home() {
           </a>
         ))}
       </nav>
+      <a className="manual-order" href="mailto:amechi@addcolormedia.com?subject=Manual%20KEYISM%20Order&body=I%20would%20like%20to%20order%20the%20KEYISM%20________%20edition.%20Please%20send%20my%20Shopify%20invoice.%0A%0AName%3A%0AShipping%20address%20(for%20hardcover)%3A">
+        CHECKOUT ISSUE? REQUEST A MANUAL SHOPIFY INVOICE →
+      </a>
     </main>
   );
 }
