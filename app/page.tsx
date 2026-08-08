@@ -1,23 +1,10 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useState } from "react";
 
 export default function Home() {
   const [notice, setNotice] = useState("");
   const [notifyOpen, setNotifyOpen] = useState(false);
-  const stageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const move = (event: PointerEvent) => {
-      if (!stageRef.current) return;
-      const x = (event.clientX / window.innerWidth - 0.5) * 12;
-      const y = (event.clientY / window.innerHeight - 0.5) * -8;
-      stageRef.current.style.setProperty("--tilt-x", `${y}deg`);
-      stageRef.current.style.setProperty("--tilt-y", `${x}deg`);
-    };
-    window.addEventListener("pointermove", move);
-    return () => window.removeEventListener("pointermove", move);
-  }, []);
 
   const checkout = (edition: string) => {
     setNotice(`${edition} checkout will activate when its payment link is connected.`);
@@ -38,23 +25,16 @@ export default function Home() {
         <span>BY B. AMECHI</span>
       </header>
 
-      <section className="stage" id="top" ref={stageRef}>
+      <section className="stage" id="top">
         <p className="signal">THE KEYS WERE NEVER HIDDEN.</p>
         <div className="halo" aria-hidden="true" />
+        <div className="spotlight" aria-hidden="true" />
         <div className="book-wrap">
-          <div className="book" aria-label="KEYISM book, rotating">
-            <div className="face front">
-              <img src="/keyism-cover-original.png" alt="KEYISM by B. Amechi" />
-            </div>
-            <div className="face back" aria-hidden="true">
-              <span>KEYISM</span>
-              <small>THE PHILOSOPHIES,<br />FRAMEWORKS, AND<br />MIND OF 19KEYS</small>
-              <i>19K—001</i>
-            </div>
-            <div className="spine" aria-hidden="true">KEYISM · B. AMECHI</div>
-          </div>
+          <img src="/keyism-cover-original.png" alt="KEYISM by B. Amechi" />
         </div>
-        <p className="instruction">DRAG YOUR GAZE · THE OBJECT MOVES</p>
+        <div className="smoke smoke-one" aria-hidden="true" />
+        <div className="smoke smoke-two" aria-hidden="true" />
+        <div className="pedestal" aria-hidden="true" />
       </section>
 
       <nav className="actions" aria-label="KEYISM purchase and access links">
