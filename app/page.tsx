@@ -34,7 +34,7 @@ export default function Home() {
       <div className="grain" aria-hidden="true" />
 
       <header className="masthead">
-        <a className="wordmark" href="#top" aria-label="KEYISM home">KEYISM</a>
+        <a className="wordmark" href="#top" aria-label="HIGH-LVL MEDIA home">HIGH-LVL MEDIA</a>
         <span>BY B. AMECHI</span>
       </header>
 

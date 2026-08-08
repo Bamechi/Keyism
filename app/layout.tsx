@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KEYISM — B. Amechi",
+  title: "HIGH-LVL MEDIA — KEYISM",
   description: "An up-close portrait of the journey, philosophy, and frameworks of 19Keys.",
   icons: {
     icon: "/favicon.svg",
