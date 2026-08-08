@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "KEYISM",
     description: "The keys were never hidden.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "KEYISM — The keys were never hidden." }],
+    images: [{ url: "/og-v2.png", width: 1200, height: 630, alt: "KEYISM — The keys were never hidden." }],
   },
-  twitter: { card: "summary_large_image", title: "KEYISM", description: "The keys were never hidden.", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", title: "KEYISM", description: "The keys were never hidden.", images: ["/og-v2.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
