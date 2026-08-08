@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+
 const DIGITAL_CHECKOUT = "https://b-amechi-books.myshopify.com/cart/51335219314843:1";
 const HARDCOVER_CHECKOUT = "https://b-amechi-books.myshopify.com/cart/51335219937435:1";
 
@@ -9,6 +13,22 @@ const actions = [
 ];
 
 export default function Home() {
+  const bookRef = useRef<HTMLDivElement>(null);
+  const moveBook = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!bookRef.current || event.pointerType === "touch") return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    bookRef.current.style.setProperty("--rx", `${-y * 20}deg`);
+    bookRef.current.style.setProperty("--ry", `${x * 28}deg`);
+    bookRef.current.style.setProperty("--gx", `${(x + 0.5) * 100}%`);
+    bookRef.current.style.setProperty("--gy", `${(y + 0.5) * 100}%`);
+  };
+  const resetBook = () => {
+    bookRef.current?.style.setProperty("--rx", "0deg");
+    bookRef.current?.style.setProperty("--ry", "-7deg");
+  };
+
   return (
     <main className="site-shell" id="top">
       <div className="grain" aria-hidden="true" />
@@ -19,24 +39,19 @@ export default function Home() {
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="signals" aria-hidden="true">
-          <span>THINK DEEPER</span>
-          <span>BUILD DIFFERENTLY</span>
-          <span>MOVE WITH INTENTION</span>
-          <span>CULTURE / COMMUNITY / CONSCIOUSNESS</span>
-        </div>
+        <div className="signals" aria-hidden="true"><span>JOURNEY</span><span>PHILOSOPHY</span><span>FRAMEWORKS</span></div>
 
         <div className="title-block">
-          <p className="eyebrow">AN UP-CLOSE PORTRAIT OF THE JOURNEY,<br />PHILOSOPHY, AND FRAMEWORKS OF 19KEYS</p>
-          <h1 id="hero-title">THE BOOK<br />IS THE KEY.</h1>
+          <p className="eyebrow" id="hero-title">AN UP-CLOSE PORTRAIT OF<br />THE WORLD OF 19KEYS</p>
         </div>
 
-        <div className="book-stage" aria-label="KEYISM book cover">
+        <div className="book-stage" aria-label="Interactive KEYISM book cover" onPointerMove={moveBook} onPointerLeave={resetBook}>
           <div className="orbit orbit-one" aria-hidden="true" />
           <div className="orbit orbit-two" aria-hidden="true" />
-          <div className="book">
+          <div className="book" ref={bookRef}>
             <div className="book-edge" aria-hidden="true" />
             <img src="/keyism-cover.png" alt="KEYISM by B. Amechi book cover" />
+            <div className="book-gloss" aria-hidden="true" />
           </div>
           <div className="book-shadow" aria-hidden="true" />
         </div>
