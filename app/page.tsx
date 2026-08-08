@@ -6,10 +6,6 @@ export default function Home() {
   const [notice, setNotice] = useState("");
   const [notifyOpen, setNotifyOpen] = useState(false);
 
-  const checkout = (edition: string) => {
-    setNotice(`${edition} checkout will activate when its payment link is connected.`);
-  };
-
   const notify = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setNotifyOpen(false);
@@ -38,12 +34,12 @@ export default function Home() {
       </section>
 
       <nav className="actions" aria-label="KEYISM purchase and access links">
-        <button onClick={() => checkout("DIGITAL EDITION")}>
+        <a href="https://b-amechi-books.myshopify.com/cart/51335219314843:1">
           <span><b>01</b> DIGITAL COPY</span><strong>$44 ↗</strong>
-        </button>
-        <button onClick={() => checkout("HARDCOPY")}>
-          <span><b>02</b> HARDCOPY</span><strong>$111 ↗</strong>
-        </button>
+        </a>
+        <a href="https://b-amechi-books.myshopify.com/cart/51335219937435:1">
+          <span><b>02</b> HARDCOPY</span><strong>$111 + $15 SHIPPING ↗</strong>
+        </a>
         <a href="https://ask.19keys.com/" target="_blank" rel="noreferrer">
           <span><b>03</b> KEYISM AI VAULT</span><strong>ASK KEYS ↗</strong>
         </a>
