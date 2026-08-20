@@ -35,7 +35,7 @@ export default function Home() {
 
       <header className="masthead">
         <a className="wordmark" href="#top" aria-label="HIGH-LVL MEDIA home">HIGH-LVL MEDIA</a>
-        <span>BY B. AMECHI</span>
+        <a className="hub-link" href="https://hub.19keys.com/" target="_blank" rel="noreferrer">19KEYS AI HUB</a>
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
