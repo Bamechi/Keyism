@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root { --ink:#090909; --paper:#e8e3d8; --red:#a90f20; }
+:root { --ink:#090909; --paper:#e8e3d8; --red:#a90f20; --font-geist-sans:Arial,Helvetica,sans-serif; --font-geist-mono:"Courier New",monospace; }
 * { box-sizing:border-box; }
 html { background:var(--ink); scroll-behavior:smooth; }
 body { margin:0; background:var(--ink); color:var(--paper); font-family:Arial, Helvetica, sans-serif; }
