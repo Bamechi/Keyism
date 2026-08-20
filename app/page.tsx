@@ -9,7 +9,7 @@ const actions = [
   { index: "01", label: "DIGITAL", detail: "$44", href: DIGITAL_CHECKOUT },
   { index: "02", label: "HARDCOVER", detail: "$111 + $15 SHIP", href: HARDCOVER_CHECKOUT },
   { index: "03", label: "ASK KEYS", detail: "ENTER THE VAULT", href: "https://ask.19keys.com/" },
-  { index: "04", label: "AMAZON / KINDLE", detail: "NOTIFY ME", href: "mailto:amechi@addcolormedia.com?subject=Notify%20me%20when%20KEYISM%20is%20on%20Amazon%20and%20Kindle" },
+  { index: "04", label: "19KEYS AI HUB", detail: "OPEN HUB", href: "https://hub.19keys.com/" },
 ];
 
 export default function Home() {
@@ -35,7 +35,6 @@ export default function Home() {
 
       <header className="masthead">
         <a className="wordmark" href="#top" aria-label="HIGH-LVL MEDIA home">HIGH-LVL MEDIA</a>
-        <a className="hub-link" href="https://hub.19keys.com/" target="_blank" rel="noreferrer">19KEYS AI HUB</a>
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
